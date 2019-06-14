@@ -16,7 +16,7 @@ class ApiMessages(object):
         print(statement['age'])
 
         resp.status = falcon.HTTP_200  # This is the default status
-        resp.body = ('OkPost')
+        resp.body = ('OkPost age: {}'.format(statement['age']))
 
 
     def on_get(self, req, resp):
