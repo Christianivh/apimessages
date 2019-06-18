@@ -13,10 +13,11 @@ class ApiMessages(object):
         body = req.stream.read()
         print(body)
         statement = json.loads(body)
-        print(statement['age'])
+        print(statement)
 
         resp.status = falcon.HTTP_200  # This is the default status
-        resp.body = ('OkPost age: {}'.format(statement['age']))
+        
+        resp.body = ('OkPost call :\n {}'.format(statement))
 
 
     def on_get(self, req, resp):
